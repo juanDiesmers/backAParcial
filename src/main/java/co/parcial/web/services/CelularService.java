@@ -2,7 +2,7 @@ package co.parcial.web.services;
 
 import co.parcial.web.dtos.CelularDTO;
 import co.parcial.web.entity.Celular;
-import co.parcial.web.repository.CelularRepository;
+import co.parcial.web.repositories.CelularRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,51 +12,40 @@ import java.util.stream.Collectors;
 
 @Service
 public class CelularService {
+    
     @Autowired
     private CelularRepository celularRepository;
 
     public List<CelularDTO> getAllCelulares() {
-        List<Celular> celulares = celularRepository.findAll();
-        return celulares.stream()
+        return celularRepository.findAll().stream()
                 .map(this::convertToDTO)
                 .collect(Collectors.toList());
     }
 
     public CelularDTO getCelularById(Long id) {
-        Optional<Celular> optionalCelular = celularRepository.findById(id);
-        if (optionalCelular.isPresent()) {
-            return convertToDTO(optionalCelular.get());
-        } else {
-            throw new RuntimeException("Celular no encontrado");
-        }
+        Optional<Celular> celular = celularRepository.findById(id);
+        return celular.map(this::convertToDTO).orElse(null);
     }
 
     public CelularDTO createCelular(CelularDTO celularDTO) {
         Celular celular = convertToEntity(celularDTO);
-        Celular savedCelular = celularRepository.save(celular);
-        return convertToDTO(savedCelular);
+        return convertToDTO(celularRepository.save(celular));
     }
 
     public CelularDTO updateCelular(Long id, CelularDTO celularDTO) {
-        if (!celularRepository.existsById(id)) {
-            throw new RuntimeException("Celular no encontrado");
-        }
         Celular celular = convertToEntity(celularDTO);
-        celular.setId(id);
-        Celular updatedCelular = celularRepository.save(celular);
-        return convertToDTO(updatedCelular);
+        celular.setId(id);  // Asegúrate de establecer el ID para actualizar
+        return convertToDTO(celularRepository.save(celular));
     }
 
     public void deleteCelular(Long id) {
-        if (!celularRepository.existsById(id)) {
-            throw new RuntimeException("Celular no encontrado");
-        }
         celularRepository.deleteById(id);
     }
 
     private CelularDTO convertToDTO(Celular celular) {
         CelularDTO celularDTO = new CelularDTO();
-        celularDTO.setMarca(celular.getMarca());
+        celularDTO.setId(celular.getId());
+        celularDTO.setMarca(celular.getGama());
         celularDTO.setSerial(celular.getSerial());
         celularDTO.setFechaCompra(celular.getFechaCompra());
         celularDTO.setAnoLanzamiento(celular.getAnoLanzamiento());
@@ -74,7 +63,7 @@ public class CelularService {
         celular.setAnoLanzamiento(celularDTO.getAnoLanzamiento());
         celular.setPrecio(celularDTO.getPrecio());
         celular.setSistemaOperativo(celularDTO.getSistemaOperativo());
-        celular.setGama(celularDTO.getGama());
+        celular.setMarca(celularDTO.getGama());
         return celular;
     }
 }

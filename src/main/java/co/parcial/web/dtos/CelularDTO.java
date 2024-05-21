@@ -3,6 +3,8 @@ package co.parcial.web.dtos;
 import java.util.Date;
 
 public class CelularDTO {
+
+    private Long id;
     private String marca;
     private String serial;
     private Date fechaCompra;
@@ -66,5 +68,10 @@ public class CelularDTO {
 
     public void setGama(String gama) {
         this.gama = gama;
+    }
+
+    public void setId(Object id2) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'setId'");
     }
 }

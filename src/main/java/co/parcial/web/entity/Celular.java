@@ -4,13 +4,12 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.Table;
 
 import java.util.Date;
 
 @Entity
-@Table(name = "celulares")
 public class Celular {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -22,73 +21,62 @@ public class Celular {
     private double precio;
     private String sistemaOperativo;
     private String gama;
-
-    // Constructor por defecto
-    public Celular() {
+    public void setMarca(String marca2) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'setMarca'");
     }
-
-    // Getters y setters
-    public Long getId() {
-        return id;
+    public void setSerial(String serial2) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'setSerial'");
     }
-
-    public void setId(Long id) {
-        this.id = id;
+    public void setFechaCompra(Date fechaCompra2) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'setFechaCompra'");
     }
-
-    public String getMarca() {
-        return marca;
+    public void setAnoLanzamiento(int anoLanzamiento2) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'setAnoLanzamiento'");
     }
-
-    public void setMarca(String marca) {
-        this.marca = marca;
+    public void setPrecio(double precio2) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'setPrecio'");
     }
-
-    public String getSerial() {
-        return serial;
+    public void setSistemaOperativo(String sistemaOperativo2) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'setSistemaOperativo'");
     }
-
-    public void setSerial(String serial) {
-        this.serial = serial;
-    }
-
-    public Date getFechaCompra() {
-        return fechaCompra;
-    }
-
-    public void setFechaCompra(Date fechaCompra) {
-        this.fechaCompra = fechaCompra;
-    }
-
-    public int getAnoLanzamiento() {
-        return anoLanzamiento;
-    }
-
-    public void setAnoLanzamiento(int anoLanzamiento) {
-        this.anoLanzamiento = anoLanzamiento;
-    }
-
-    public double getPrecio() {
-        return precio;
-    }
-
-    public void setPrecio(double precio) {
-        this.precio = precio;
-    }
-
-    public String getSistemaOperativo() {
-        return sistemaOperativo;
-    }
-
-    public void setSistemaOperativo(String sistemaOperativo) {
-        this.sistemaOperativo = sistemaOperativo;
-    }
-
     public String getGama() {
-        return gama;
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getGama'");
+    }
+    public String getSistemaOperativo() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getSistemaOperativo'");
+    }
+    public double getPrecio() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getPrecio'");
+    }
+    public int getAnoLanzamiento() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getAnoLanzamiento'");
+    }
+    public Date getFechaCompra() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getFechaCompra'");
+    }
+    public String getSerial() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getSerial'");
+    }
+    public Object getId() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getId'");
+    }
+    public void setId(Long id2) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'setId'");
     }
 
-    public void setGama(String gama) {
-        this.gama = gama;
-    }
+    
 }
