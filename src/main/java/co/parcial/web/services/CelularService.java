@@ -59,7 +59,7 @@ public class CelularService {
         celularDTO.setMarca(celular.getMarca());
         celularDTO.setSerial(celular.getSerial());
         celularDTO.setFechaCompra(celular.getFechaCompra());
-        celularDTO.setAnoLanzamiento(celular.getAñoLanzamiento());
+        celularDTO.setAnoLanzamiento(celular.getAnoLanzamiento());
         celularDTO.setPrecio(celular.getPrecio());
         celularDTO.setSistemaOperativo(celular.getSistemaOperativo());
         celularDTO.setGama(celular.getGama());
@@ -71,7 +71,7 @@ public class CelularService {
         celular.setMarca(celularDTO.getMarca());
         celular.setSerial(celularDTO.getSerial());
         celular.setFechaCompra(celularDTO.getFechaCompra());
-        celular.setAñoLanzamiento(celularDTO.getAnoLanzamiento());
+        celular.setAnoLanzamiento(celularDTO.getAnoLanzamiento());
         celular.setPrecio(celularDTO.getPrecio());
         celular.setSistemaOperativo(celularDTO.getSistemaOperativo());
         celular.setGama(celularDTO.getGama());
